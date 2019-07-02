@@ -5,3 +5,20 @@ logging:
     org.springframework.web.reactive: DEBUG
     reactor.ipc.netty: DEBUG
     reactor.netty: DEBUG
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: dev
+  cloud:
+    gateway:
+      plugin:
+        config:
+          log-request: true
+          read-request-data: true # this setting will read all request data
+          read-response-data: true
+          exception-json-handler: true
+        grey:
+          enable: false
+          grey-ribbon-rule: weight_response
