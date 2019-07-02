@@ -14,6 +14,7 @@ public class HackdayApplication {
 		return builder.routes()
 				.route("path_route", r -> r.path("/get")
 						.uri("http://httpbin.org"))
+
 				.build();
 	}
 
